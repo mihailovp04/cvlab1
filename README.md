@@ -10,11 +10,10 @@
 
 - Установить виртуальную машину с Debian.
 - Настроить веб-сервер LAMP.
+- Установка Apache, MariaDB, PHP.
 - Установить и настроить PhpMyAdmin и CMS Drupal.
 - Настроить виртуальные хосты.
-- Проверить работу сервисов и ответить на вопросы.
-
----
+- Проверить работу сервисов.
 
 ## Ход работы
 
@@ -85,7 +84,7 @@ qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
    su
    ```
 
-Установливаю необходимые пакеты:
+Устанавливаю необходимые пакеты:
 
    ```bash
    apt update -y
@@ -113,7 +112,7 @@ qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
    Проверяю на их наличие командой `ls -l`
    ![check](images/check.png)
 
-2. Размещяюю и распаковываю файлы:
+2. Размещяю и распаковываю файлы:
 
    ```bash
    mkdir /var/www
@@ -186,13 +185,15 @@ nano /etc/apache2/sites-available/02-drupal.conf
 ```
 
 Выполнил перезагрузку Apache HTTP Server
-systemctl reload apache2
-Далее я в файл /etc/host добавил следующие строки
+`systemctl reload apache2`
+Далее я в файл `/etc/host` добавил следующие строки
 
 ```bash
 127.0.0.1 phpmyadmin.localhost
 127.0.0.1 drupal.localhost
 ```
+
+![ip](images/ip.png)
 
 ---
 
