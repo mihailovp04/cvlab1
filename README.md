@@ -288,14 +288,9 @@ systemctl reload apache2
 
 ## Библиография
 
-Debian Documentation - https://wiki.debian.org/
-
-QEMU Documentation - https://www.qemu.org/documentation/
-
-Apache HTTP Server - Documentation.  https://httpd.apache.org/docs/
-
-MariaDB Documentation - https://mariadb.com/kb/en/documentation/
-
-PhpMyAdmin Documentation - https://www.phpmyadmin.net/docs/
-
-Drupal Documentation - https://www.drupal.org/docs
+1. [Debian Documentation](https://wiki.debian.org/)
+2. [QEMU Documentation](https://www.qemu.org/documentation/)
+3. [Apache HTTP Server - Documentation](https://httpd.apache.org/docs/)
+4. [MariaDB Documentation](https://mariadb.com/kb/en/documentation/)
+5. [PhpMyAdmin Documentation](https://www.phpmyadmin.net/docs/)
+6. [Drupal Documentation](https://www.drupal.org/docs)
