@@ -112,7 +112,10 @@ qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
 
    ![drupal](images/drupal.png)
 
-2. Разместил файлы:
+   Проверяю на их наличие командой `ls -l`
+   ![check](images/check.png)
+
+2. Размещяюю и распаковываю файлы:
 
    ```bash
    mkdir /var/www
