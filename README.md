@@ -184,8 +184,10 @@ nano /etc/apache2/sites-available/02-drupal.conf
 /usr/sbin/a2ensite 02-drupal
 ```
 
-Выполнил перезагрузку Apache HTTP Server
+Выполняю перезагрузку Apache HTTP Server командой:
 `systemctl reload apache2`
+![sfa](images/activateandreload.png)
+
 Далее я в файл `/etc/host` добавил следующие строки
 
 ```bash
