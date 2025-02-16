@@ -30,27 +30,45 @@
 3. Захожу на официальный сайт и копирую ссылку для дальйнешей работы.
 ![Сайт Debian](images/sitedebian.png)
 4. Захожу в папку dvd, с помощью команды cd dvd и прописываю следующую команду в командную строку, для скачивания образа.
+
+```sh
 wget -O debian.iso https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.9.0-amd64-DVD-1.iso
+```
+
 ![Установка Debian](images/downloaddebian.png)
 5. После я устанавливаю QEMU, используя следующую команду:
+
+```sh
 pacman -S mingw-w64-ucrt-x86_64-qemu
+```
+
 ![Установка qemu](images/downloadqemu.png)
 6. QEMU был успешно установлен.
 
-## 2. Установка ОС
+## Установка ОС
 
-1. Для начала установки ОС, я прописываю следующую команду, для создания образа диска для виртуальной машины, формат qcow2.
+Для начала установки ОС, я прописываю следующую команду, для создания образа диска для виртуальной машины, формат qcow2.
+
+```sh
 qemu-img create -f qcow2 debian.qcow2 8G
-2. Запускаю установку ОС с помощью команды и начинаю установку
+```
+
+Запускаю установку ОС с помощью команды и начинаю установку
+
+```sh
 qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
+```
+
 ![установка](images/install.png)
 
-3. Использовал параметры:
-   - Имя компьютера: `debian`
-   - Хостовое имя: `debian.localhost`
-   - Имя пользователя: `user`
-   - Пароль: `password`
-4. После установки перезагрузил виртуальную машину
+Использовал параметры:
+
+- Имя компьютера: `debian`
+- Хостовое имя: `debian.localhost`
+- Имя пользователя: `user`
+- Пароль: `password`
+
+После установки перезагрузил виртуальную машину
 
    ```bash
    qemu-system-x86_64 -hda debian.qcow2 -m 2G -smp 2 \
@@ -123,29 +141,42 @@ EXIT;
 ## 7. Настройка виртуальных хостов
 
 Создаю файл командой:
+
+```sh
 nano /etc/apache2/sites-available/01-phpmyadmin.conf
+```
+
 и далее ввожу следующее содержимое:
 
+```sh
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
     DocumentRoot "/var/www/phpmyadmin"
     ServerName phpmyadmin.localhost
-    ServerAlias www.phpmyadmin.localhost
+    ServerAlias <www.phpmyadmin.localhost>
     ErrorLog "/var/log/apache2/phpmyadmin.localhost-error.log"
     CustomLog "/var/log/apache2/phpmyadmin.localhost-access.log" common
 </VirtualHost>
+```
 
 Также создаю следующий файл командой:
+
+```sh
 nano /etc/apache2/sites-available/02-drupal.conf
+```
+
 и далее ввожу следующее содержимое:
+
+```sh
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
     DocumentRoot "/var/www/drupal"
     ServerName drupal.localhost
-    ServerAlias www.drupal.localhost
+    ServerAlias <www.drupal.localhost>
     ErrorLog "/var/log/apache2/drupal.localhost-error.log"
     CustomLog "/var/log/apache2/drupal.localhost-access.log" common
 </VirtualHost>
+```
 
 Далее я зарегистрировал конфигурацию, выполнив команды:
 
@@ -180,8 +211,8 @@ systemctl reload apache2
    ```
 
 3. Проверил сайты в браузере:
-   - http://drupal.localhost:1080
-   - http://phpmyadmin.localhost:1080
+   - <http://drupal.localhost:1080>
+   - <http://phpmyadmin.localhost:1080>
 
 ---
 
