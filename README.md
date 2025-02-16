@@ -61,7 +61,7 @@ qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
 
 ![установка](images/install.png)
 
-Использовал параметры:
+При установке я использовал параметры:
 
 - Имя компьютера: `debian`
 - Хостовое имя: `debian.localhost`
@@ -81,15 +81,13 @@ qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
 
 ## 4. Установка LAMP
 
-Авторизируюсь и переключаюсь на суперпользователя командой:
+Для дальнейшей работы я переключаюсь на суперпользователя, используя следующую команду:
 
    ```bash
    su
    ```
 
-![логин](images/loginandsu.png)
-
-Установил необходимые пакеты:
+Установливаю необходимые пакеты:
 
    ```bash
    apt update -y
