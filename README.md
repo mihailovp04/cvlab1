@@ -223,6 +223,7 @@ nano /etc/apache2/sites-available/02-drupal.conf
 
 4. При дальнейших настройках и установках, я встретился со следующими ошибками
 ![errors](images/errors.png)
+
 Для решения ошибки с `PHP extensions`, я выполнил следующие команды
 
 ```bash
@@ -231,7 +232,7 @@ apt install php-gd php-xml
 systemctl reload apache2
 ```
 
- Для решения ошибки с "File System и Settings file", я прописал следующие команды:
+Для решения ошибки с "File System и Settings file", я прописал следующие команды:
 ![fix](images/fix.png)
 Как видим, все ошибки пропали:
 ![fixall](images/fixall.png)
