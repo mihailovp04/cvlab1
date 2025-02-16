@@ -285,3 +285,12 @@ systemctl reload apache2
 ## 9. Выводы
 
 В ходе лабораторной работы была освоена установка и настройка виртуальной машины с Debian, установка стека LAMP, работа с базами данных, настройка виртуальных хостов и тестирование работы серверов.
+
+## Библиография
+
+Debian Documentation. Debian Wiki. - [debian](https://wiki.debian.org/)
+QEMU Documentation. [qemu](https://www.qemu.org/documentation/)
+Apache HTTP Server Documentation. [apache](https://httpd.apache.org/docs/)
+MariaDB Documentation. - [mariadb](https://mariadb.com/kb/en/documentation/)
+PhpMyAdmin Documentation. - [php](https://www.phpmyadmin.net/docs/)
+Drupal Documentation. [drupal](https://www.drupal.org/docs)
