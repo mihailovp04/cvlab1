@@ -201,13 +201,15 @@ nano /etc/apache2/sites-available/02-drupal.conf
 
 ## 8. Тестирование
 
-1. Проверил ОС:
+1. В открывшемся консольном окне выполните команду uname -a.
 
    ```bash
    uname -a
    ```
 
-2. Перегрузил Apache:
+   ![uname](images/uname.png)
+
+2. Перезагрузка Apache Web Server
 
    ```bash
    systemctl restart apache2
@@ -215,9 +217,24 @@ nano /etc/apache2/sites-available/02-drupal.conf
 
 3. Проверил сайты в браузере:
    - <http://drupal.localhost:1080>
+   ![drupal](images/drupallogin.png)
    - <http://phpmyadmin.localhost:1080>
+   ![php](images/phpmyadminlogin.png)
 
----
+4. При дальнейших настройках и установках, я встретился со следующими ошибками
+![errors](images/errors.png)
+Для решения ошибки с `PHP extensions`, я выполнил следующие команды
+
+```bash
+apt update
+apt install php-gd php-xml
+systemctl reload apache2
+```
+
+Для решения ошибки с "File System и Settings file", я прописал следующие команды:
+![fix](images/fix.png)
+Как видим, все ошибки пропали:
+![fixall](images/fixall.png)
 
 ## 9. Ответы на вопросы
 
