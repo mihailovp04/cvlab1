@@ -231,7 +231,7 @@ apt install php-gd php-xml
 systemctl reload apache2
 ```
 
-Для решения ошибки с "File System и Settings file", я прописал следующие команды:
+ Для решения ошибки с "File System и Settings file", я прописал следующие команды:
 ![fix](images/fix.png)
 Как видим, все ошибки пропали:
 ![fixall](images/fixall.png)
