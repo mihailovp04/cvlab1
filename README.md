@@ -220,7 +220,7 @@ nano /etc/apache2/sites-available/02-drupal.conf
 
    ![uname](images/uname.png)
 
-2. Перезагрузка Apache Web Server
+2. Команда для перезагрузки Apache Web Server
 
    ```bash
    systemctl restart apache2
